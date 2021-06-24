@@ -12,13 +12,14 @@
         <div class="membership-card" style="border: 0px solid blue;box-shadow:1px 1px 2px rgba(0,0,0,0.5)">
             <div class="membership-title">
                 <i class="fas fa-receipt card-icon"></i>
-                <h3>Ticket de Bus</h3>
+                <h3>Reservez une place</h3>
             </div>
             <div class="membership-perks">
-                <p>Reservez vos ticket de voyages</p>
-                <p>À partir de 2000 FCFA</p>
+                <p>Reservez vos places et recevez un ticket</p>
+                <p>Vous pourrez consultez les voyages disponibles en suivant ce lien.Vous aurez a choisir une ville de départ, une destination et une date de voyage.
+                </p>
             </div>
-            <a href="#" class="button">Reserver</a>
+            <a href="{{ route('reservations') }}" class="button">Reserver une place</a>
         </div>
 
         <div class="membership-card" style="border: 1px solid blue">
