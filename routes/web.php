@@ -28,10 +28,17 @@ Route::get("/apropos",[PagesController::class,'about']);
 Route::get("/contacts",[PagesController::class,'contacts']);
 
 Route::post('/inscription',[ClientController::class,'store'])->name('inscription');
-Route::get('/services/reservations',[VoyageController::class,'find'])->name('reservations');
-Route::post('/services/reservations',[VoyageController::class,'store'])->name('rechercher/reservation');
-Route::get('/services/expeditions',[VoyageController::class,'find'])->name('reservations');
-Route::post('/services/expeditions',[VoyageController::class,'store'])->name('rechercher/expeditions');
+// Route::get('/services/reservations',[VoyageController::class,'find'])->name('reservations');
+Route::get('/services/reservations',function(){
+    return view('services.reservations');
+})->name('reservations');
+Route::post('services/reserver', function () {
+    return view('services.reserver');
+})->name('reserver');
+
+Route::post('/services/reservations',[VoyageController::class,'store'])->name('places-disponibles');
+Route::get('/services/expeditions',[VoyageController::class,'find'])->name('expeditions');
+Route::post('/services/expeditions',[VoyageController::class,'store'])->name('enoyer-colis');
 
 Route::get('/services',function(){
     return view('services');
