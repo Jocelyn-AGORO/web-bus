@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\VoyageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,17 +30,15 @@ Route::get("/apropos",[PagesController::class,'about']);
 Route::get("/contacts",[PagesController::class,'contacts']);
 
 Route::post('/inscription',[ClientController::class,'store'])->name('inscription');
-// Route::get('/services/reservations',[VoyageController::class,'find'])->name('reservations');
-Route::get('/services/reservations',function(){
-    return view('services.reservations');
-})->name('reservations');
-Route::post('services/reserver', function () {
-    return view('services.reserver');
-})->name('reserver');
 
-Route::post('/services/reservations',[VoyageController::class,'store'])->name('places-disponibles');
-Route::get('/services/expeditions',[VoyageController::class,'find'])->name('expeditions');
-Route::post('/services/expeditions',[VoyageController::class,'store'])->name('enoyer-colis');
+//page pour consulter la liste de voyage
+Route::get('/services/reservations',[VoyageController::class,'index'])->name('reservations');
+//nombre de places disponibles
+Route::get('/services/reservations/voyages',[VoyageController::class,'index'])->name('places-disponibles');
+//reservez une place
+Route::post('/services/reservations/reserver',[VoyageController::class,'reserver'])->name('reserver');
+Route::get('/services/expeditions',[VoyageController::class,'expeditions'])->name('expeditions');
+Route::post('/services/reservations/reserver',[VoyageController::class,'expedier'])->name('expedier');
 
 Route::get('/services',function(){
     return view('services');
