@@ -6,7 +6,7 @@
         <div class="hero-content">
             <h1>WEB BUS</h1>
             <p>Faites vos reservation de bus en ligne</p>
-            <a href="#" class="button" id="show-modal-bis">Démarrer</a>
+            <a href="{{ route('reservations') }}" class="button" id="show-modal-bis">Démarrer</a>
         </div>
     </div>
 

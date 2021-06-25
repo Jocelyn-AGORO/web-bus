@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\VoyageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +31,8 @@ Route::get("/lignes",[PagesController::class,'lines']);
 Route::get("/apropos",[PagesController::class,'about']);
 Route::get("/contacts",[PagesController::class,'contacts']);
 
-Route::post('/inscription',[ClientController::class,'store'])->name('inscription');
+Route::get('/inscription',[ClientController::class,'inscription'])->name('inscription');
+Route::post('/inscription',[ClientController::class,'store'])->name('inscrire');
 
 //page pour consulter la liste de voyage
 Route::get('/services/reservations',[VoyageController::class,'index'])->name('reservations');
@@ -38,23 +41,15 @@ Route::get('/services/reservations/voyages',[VoyageController::class,'index'])->
 //reservez une place
 Route::post('/services/reservations/reserver',[VoyageController::class,'reserver'])->name('reserver');
 Route::get('/services/expeditions',[VoyageController::class,'expeditions'])->name('expeditions');
-Route::post('/services/reservations/reserver',[VoyageController::class,'expedier'])->name('expedier');
+Route::post('/services/reservations/expedier',[VoyageController::class,'expedier'])->name('expedier');
 
-Route::get('/services',function(){
-    return view('services');
-})->name('services');
+Route::get('/services',[PagesController::class,'services'])->name('services');
 
-Route::get('/lignes',function(){
-    return view('lines');
-})->name('lines');
+Route::get('/lignes',[PagesController::class,'lines'])->name('lines');
 
-Route::get('/contacts',function(){
-    return view('contacts');
-})->name('contacts');
+Route::get('/contacts',[PagesController::class,'contacts'])->name('contacts');
 
-Route::get('/about',function(){
-    return view('about');
-})->name('about');
+Route::get('/about',[PagesController::class,'about'])->name('about');
 
 
 

@@ -31,7 +31,7 @@
                 <p>Envoyez des colis à vos proches</p>
                 <p>À partir de 500 FCFA</p>
             </div>
-            <a href="#" class="button">Envoyer</a>
+            <a href="{{ route('expeditions') }}" class="button">Envoyer</a>
         </div>
     </div>
 
