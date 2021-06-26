@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class BusController extends Controller
 {
+
+    public function ajouter()
+    {
+        return view('admin.bus.index');
+    }
+
     /**
      * Display a listing of the resource.
      *

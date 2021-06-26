@@ -3,7 +3,7 @@
 @section('content')
 
     <div>
-        <h1>Gérez les Villes déservies</h1>
+        <h1>Gérez Les Colis</h1>
         <div>
             {{-- @foreach ( as )
 

@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ColisController extends Controller
 {
+    public function ajouter()
+    {
+        return view('admin.colis.index');
+    }
+
     /**
      * Display a listing of the resource.
      *

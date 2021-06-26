@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
+
+    public function ajouter()
+    {
+        return view('admin.client.index');
+    }
+
     /**
      * Display a listing of the resource.
      *

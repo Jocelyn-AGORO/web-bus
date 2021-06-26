@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ExpediteurController extends Controller
 {
+    public function ajouter()
+    {
+        return view('admin.expediteurs.index');
+    }
+
     /**
      * Display a listing of the resource.
      *

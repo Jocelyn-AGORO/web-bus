@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class VilleController extends Controller
 {
+    public function ajouter()
+    {
+        return view('admin.villes.index');
+    }
+
     /**
      * Display a listing of the resource.
      *

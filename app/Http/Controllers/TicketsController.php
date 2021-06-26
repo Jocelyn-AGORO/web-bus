@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class TicketsController extends Controller
 {
+    public function ajouter()
+    {
+        return view('admin.tickets.index');
+    }
+
     /**
      * Display a listing of the resource.
      *

@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
+    public function ajouter()
+    {
+        return view('admin.reservations.index');
+    }
+
     /**
      * Display a listing of the resource.
      *

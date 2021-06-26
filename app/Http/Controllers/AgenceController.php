@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class AgenceController extends Controller
 {
+    public function ajouter()
+    {
+        return view('admin.agences.index');
+    }
+
     /**
      * Display a listing of the resource.
      *
