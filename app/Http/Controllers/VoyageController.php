@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class VoyageController extends Controller
 {
+
+    public function ajouter()
+    {
+        return view('admin.voyages.index');
+    }
     /**
      * Display a listing of the resource.
      *

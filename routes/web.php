@@ -23,14 +23,20 @@ Route::get('/', function () {
 
 // Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//Pages
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get("/services",[PagesController::class,'services']);
 Route::get("/lignes",[PagesController::class,'lines']);
 Route::get("/apropos",[PagesController::class,'about']);
 Route::get("/contacts",[PagesController::class,'contacts']);
 
+//Gestion des Voyages
+Route::post('admin/voyages',[VoyageController::class,'store'])->name('ajoutervoyage');
+Route::get('admin/voyages',[VoyageController::class,'ajouter'])->name('voyages');
+
+//Inscription
 Route::get('/inscription',[ClientController::class,'inscription'])->name('inscription');
 Route::post('/inscription',[ClientController::class,'store'])->name('inscrire');
 
