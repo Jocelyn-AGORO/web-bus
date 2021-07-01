@@ -2,13 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use Illuminate\Http\Request;
+
 
 class TicketsController extends Controller
 {
     public function ajouter()
     {
         return view('admin.tickets.index');
+    }
+
+    //modifier un élément
+    public function editer($id)
+    {
+
+        redirect('/admin/tickets/index');
+    }
+
+    //supprimer un élément
+    public function supprimer($id)
+    {
+
+        redirect('/admin/tickets/index');
+    }
+
+    public function afficher_ticket()
+    {
+        return view('services.tickets');
+    }
+
+    public function generateTicket()
+    {
+        $data = '';
+        $page_ticket='';
+        $pdf = PDF::loadview('services.tickets');
+        return $pdf->download('ticket.pdf');
     }
 
     /**

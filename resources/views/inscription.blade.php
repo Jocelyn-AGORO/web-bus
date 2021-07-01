@@ -2,11 +2,11 @@
 
 @section('content')
 
-            <div style="height: 100vh;">
-                <div class="font-weight-bold text-center">
+            <div class="my-5">
+                <div class="font-weight-bold text-center my-5">
                     <h1>Inscrivez Vous Maintenant !!!</h1>
                 </div>
-                <div class="container">
+                <div class="container my-5">
                     <form action="{{ route('home') }}" method="POST">
                         @csrf
                         @method("POST")
@@ -48,8 +48,12 @@
                                 </div>
                             </div>
                         </div>
-
-                        </form>
+                        <div class="text-center my-3">
+                            <button class="button">
+                                Créer mon compte
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 

@@ -11,6 +11,19 @@ class ConducteurController extends Controller
         return view('admin.conducteurs.index');
     }
 
+    //modifier un élément
+    public function editer($id)
+    {
+
+        redirect('/admin/conducteurs/index');
+    }
+
+    //supprimer un élément
+    public function supprimer($id)
+    {
+
+        redirect('/admin/conducteurs/index');
+    }
     /**
      * Display a listing of the resource.
      *

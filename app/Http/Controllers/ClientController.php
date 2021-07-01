@@ -12,6 +12,20 @@ class ClientController extends Controller
         return view('admin.client.index');
     }
 
+    //modifier un élément
+    public function editer($id)
+    {
+
+        redirect('/admin/client/index');
+    }
+
+    //supprimer un élément
+    public function supprimer($id)
+    {
+
+        redirect('/admin/client/index');
+    }
+
     /**
      * Display a listing of the resource.
      *

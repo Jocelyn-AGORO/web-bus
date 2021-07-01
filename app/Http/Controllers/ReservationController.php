@@ -11,6 +11,20 @@ class ReservationController extends Controller
         return view('admin.reservations.index');
     }
 
+    //modifier un élément
+    public function editer($id)
+    {
+
+        redirect('/admin/reservations/index');
+    }
+
+    //supprimer un élément
+    public function supprimer($id)
+    {
+
+        redirect('/admin/reservations/index');
+    }
+
     /**
      * Display a listing of the resource.
      *

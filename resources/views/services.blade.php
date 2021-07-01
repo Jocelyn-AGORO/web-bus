@@ -6,10 +6,10 @@
     }
 </style>
 
-<div style="height: 100vh;" >
-    <div class="membership-wrapper" style="border: 1px solid red">
+<div class="h-100 d-flex justify-content-center align-items-center m-5">
+    <div class="membership-wrapper d-flex justify-content-around" style="padding:5rem">
 
-        <div class="membership-card" style="border: 0px solid blue;box-shadow:1px 1px 2px rgba(0,0,0,0.5)">
+        <div class="membership-card text-center mr-md-3" style="box-shadow:1px 1px 2px rgba(0,0,0,0.5)">
             <div class="membership-title">
                 <i class="fas fa-receipt card-icon"></i>
                 <h3>Reservez une place</h3>
@@ -22,7 +22,7 @@
             <a href="{{ route('reservations') }}" class="button">Reserver une place</a>
         </div>
 
-        <div class="membership-card" style="border: 1px solid blue">
+        <div class="membership-card text-center ml-md-3" style="box-shadow:1px 1px 2px rgba(0,0,0,0.5)">
             <div class="membership-title">
                 <i class="fas fa-box card-icon"></i>
                 <h3>Envoie de colis</h3>

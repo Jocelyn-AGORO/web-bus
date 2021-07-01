@@ -12,6 +12,20 @@ class BusController extends Controller
         return view('admin.bus.index');
     }
 
+    //modifier un élément
+    public function editer($id)
+    {
+
+        redirect('/admin/bus/index');
+    }
+
+    //supprimer un élément
+    public function supprimer($id)
+    {
+
+        redirect('/admin/bus/index');
+    }
+
     /**
      * Display a listing of the resource.
      *

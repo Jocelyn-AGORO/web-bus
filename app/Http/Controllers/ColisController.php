@@ -11,6 +11,20 @@ class ColisController extends Controller
         return view('admin.colis.index');
     }
 
+    //modifier un élément
+    public function editer($id)
+    {
+
+        redirect('/admin/colis/index');
+    }
+
+    //supprimer un élément
+    public function supprimer($id)
+    {
+
+        redirect('/admin/colis/index');
+    }
+
     /**
      * Display a listing of the resource.
      *

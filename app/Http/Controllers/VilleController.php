@@ -11,6 +11,19 @@ class VilleController extends Controller
         return view('admin.villes.index');
     }
 
+    //modifier un élément
+    public function editer($id)
+    {
+
+        redirect('/admin/villes/index');
+    }
+
+    //supprimer un élément
+    public function supprimer($id)
+    {
+
+        redirect('/admin/villes/index');
+    }
     /**
      * Display a listing of the resource.
      *

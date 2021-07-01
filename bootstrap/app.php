@@ -27,6 +27,10 @@ $app = new Illuminate\Foundation\Application(
 */
 
 $app->singleton(
+    Barryvdh\DomPDF\ServiceProvider::class
+);
+
+$app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
     App\Http\Kernel::class
 );

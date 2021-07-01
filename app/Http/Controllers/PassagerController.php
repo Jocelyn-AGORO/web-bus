@@ -11,6 +11,20 @@ class PassagerController extends Controller
         return view('admin.passagers.index');
     }
 
+    //modifier un élément
+    public function editer($id)
+    {
+
+        redirect('/admin/passagers/index');
+    }
+
+    //supprimer un élément
+    public function supprimer($id)
+    {
+
+        redirect('/admin/passagers/index');
+    }
+
     /**
      * Display a listing of the resource.
      *

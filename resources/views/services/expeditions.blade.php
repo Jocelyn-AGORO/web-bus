@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div style="height: 100vh;">
+<div style="height: 100vh;" class="my-5"
     <h1 class="centerise">Expéditions</h1>
-    <div class="container mt-5">
+    <div class="container mt-5 my-5">
     <form action="{{ route('expeditions') }}" method="get">
         @csrf
         @method("GET")
@@ -51,7 +51,57 @@
         </div>
     </form>
     </div>
+    <div class="mt-5 table table-striped">
+        <div class="container">
+            <div class="container my-5 p-2">
+                <div>
+                        {{-- @foreach ( $voyages as $voyage )
+                           <ol class="list-group my-2">
+                            <li class="list-group-item clearfix">
+                            <h3 class="list-group text-right">
+                             <div class="list-group-item">Date : {{ $voyage->date }}</div>
+                             <div class="py-3">
+                                 <a href="{{ route('reserver',['id' => 1]) }}" class="button">Reserver</a>
+                            </div>
+                            </h3>
+                            <h2>Places Disponibles : </h2>
+                            <h2>Départ : {{ $voyage->parcours }} </h2>
+                            <h3>Arrivée : {{ $voyage->parcours }}</h3>
+                            <h4>Heure de départ :{{ $voyage->heure_depart }}</h4>
+                            <h5>Durée moyenne du voyage : 1h30</h5>
+                            </li>
+                        </ol>
+                         @endforeach
+                </div> --}}
+                <section class="search-results">
+                    <header>
+                    <h1 class="h3">Résultats de la Recherche</h1>
+                    </header>
+                        <ol class="list-group my-2">
+                            <li class="list-group-item clearfix">
+                            <h3 class="list-group text-right">
+                             <div class="list-group-item">Date : 30-06-2021</div>
+                             <div class="py-3">
+                                 <a href="{{ route('reserver',['id' => 1]) }}" class="button">Reserver</a>
+                            </div>
+                            </h3>
+                            <h2>Places Disponibles : </h2>
+                            <h2>Départ : Lomé</h2>
+                            <h3>Arrivée : Atakpamé</h3>
+                            <h4>Heure de départ : 12h30</h4>
+                            <h5>Durée moyenne du voyage : 1h30</h5>
+                            </li>
+                        </ol>
+                </section>
+            </div>
+            
+    </div>
+</div>
+
+    
+
 
 </div>
+
 
 @endsection

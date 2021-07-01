@@ -11,6 +11,19 @@ class ExpediteurController extends Controller
         return view('admin.expediteurs.index');
     }
 
+    //modifier un élément
+    public function editer($id)
+    {
+
+        redirect('/admin/expediteurs/index');
+    }
+
+    //supprimer un élément
+    public function supprimer($id)
+    {
+
+        redirect('/admin/expediteurs/index');
+    }
     /**
      * Display a listing of the resource.
      *

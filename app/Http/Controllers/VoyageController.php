@@ -11,6 +11,21 @@ class VoyageController extends Controller
     {
         return view('admin.voyages.index');
     }
+
+    //modifier un élément
+    public function editer($id)
+    {
+
+        redirect('/admin/voyages/index');
+    }
+
+    //supprimer un élément
+    public function supprimer($id)
+    {
+
+        redirect('/admin/voyages/index');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,9 +36,10 @@ class VoyageController extends Controller
         return view('services.reservations');
     }
 
-    public function reserver()
+    public function reserver($id)
     {
-        return view('services.reservations');
+
+        return redirect('services');
     }
 
     public function reservations()

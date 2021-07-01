@@ -11,6 +11,20 @@ class AgenceController extends Controller
         return view('admin.agences.index');
     }
 
+    //modifier un élément
+    public function editer($id)
+    {
+
+        redirect('/admin/agences/index');
+    }
+
+    //supprimer un élément
+    public function supprimer($id)
+    {
+
+        redirect('/admin/agences/index');
+    }
+
     /**
      * Display a listing of the resource.
      *
