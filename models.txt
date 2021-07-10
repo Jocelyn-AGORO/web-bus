@@ -1,0 +1,75 @@
+Client
+    id : Int
+    nom : String
+    prenom : String
+    age : Int
+    profession : String
+
+Expediteur : Client
+    telephone : String
+    adresse : String (length : 12 )
+
+Passager : Client
+    adresse : String
+    mail : String
+    telephone : String (length : 12 )
+    voyage_id : int FK
+
+Reservation
+    id : Int
+    nom : String
+    matricule : String
+    passager_id : int  FK
+    ticket_id : int FK
+
+Ticket
+    id : Int
+    reference : String
+    chemin : String
+    prix : Int
+
+Voyage
+    id : Int
+    date : Date
+    duree : float
+    places : int
+    parcours : String
+    bus_id : int FK
+    conducteur_id : int FK
+    admin_id : int FK
+
+Bus
+    id : Int
+    date Date
+    capacite : Int
+    etat : String
+
+Conducteur
+    id : Int
+    nom : String
+    prenom : String
+    adresse : String
+    etat : String
+
+Ville :
+    id : Int
+    name : String
+
+Agence
+    id : Int
+    nom: String
+    quartier : String
+    ville_id : int FK
+
+Colis
+    id : Int
+    description : String
+    etat : String
+    exp_id : int FK
+    agence_id : int FK
+
+Administrateur
+    id : Int
+    nom : String
+    pass : String
+    role : String

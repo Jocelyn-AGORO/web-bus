@@ -9,11 +9,11 @@ class Reservations extends Model
 {
     use HasFactory;
 
-    protected $table='Reservations';
+    protected $table='reservations';
 
     protected $primaryKey ='id';
 
-    protected $timestamps = true;
+    protected $timestamp = true;
 
     protected $formatter='Y-m-d H:i:s';
 
@@ -30,7 +30,8 @@ class Reservations extends Model
 
     public function ReservationsTickets()
     {
-        $this->belongsTo(Tickets::class);
+        $this->hasOne(Tickets::class);
+        //belongsTo(Tickets::class);
     }
 
 }

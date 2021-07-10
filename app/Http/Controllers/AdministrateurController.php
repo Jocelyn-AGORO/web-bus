@@ -2,10 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Administrateur;
 use Illuminate\Http\Request;
 
 class AdministrateurController extends Controller
 {
+
+    public function connexion_admin()
+    {
+
+        return redirect()->route('panel-admin');
+    }
+
+    public function auth_admin()
+    {
+     return view('admin.login');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +46,10 @@ class AdministrateurController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Administrateur::create([
+
+        ]);
+        return redirect()->route('connexion_admin');
     }
 
     /**

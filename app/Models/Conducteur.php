@@ -9,11 +9,11 @@ class Conducteur extends Model
 {
     use HasFactory;
 
-    protected $table='Conducteur';
+    protected $table='conducteurs';
 
     protected $primaryKey ='id';
 
-    protected $timestamps = true;
+    protected $timestamp = true;
 
     protected $formatter='Y-m-d H:i:s';
 

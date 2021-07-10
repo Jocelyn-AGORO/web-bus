@@ -36,10 +36,22 @@ class VoyageController extends Controller
         return view('services.reservations');
     }
 
-    public function reserver($id)
-    {
+    /**
+     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
 
-        return redirect('services');
+    public function reserver(Request  $request,$id)
+    {
+        //$name = $request->input('place');
+        $nb_place = $request->input('place');
+        dd([$request->path(),$request->input('place')]);
+        for ($i=0;$i < $nb_place;$i++){
+
+        }
+
+        //return redirect('/index');
     }
 
     public function reservations()

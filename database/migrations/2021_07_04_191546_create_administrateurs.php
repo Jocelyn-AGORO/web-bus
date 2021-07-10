@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePassagersTable extends Migration
+class CreateAdministrateurs extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreatePassagersTable extends Migration
      */
     public function up()
     {
-        Schema::create('passagers', function (Blueprint $table) {
-            $table->id();
+        Schema::create('administrateurs', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('role');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreatePassagersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('passagers');
+        Schema::dropIfExists('administrateurs');
     }
 }

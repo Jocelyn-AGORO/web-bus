@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateColisTable extends Migration
+class CreateColis extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,18 @@ class CreateColisTable extends Migration
     public function up()
     {
         Schema::create('colis', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('description');
+            $table->string('etat');
+            $table->unsignedInteger('exp_id');
+            $table->unsignedInteger('agence_id');
             $table->timestamps();
+            $table->foreign('exp_id')
+                ->references('id')
+                ->on('expediteurs');
+            $table->foreign('agence_id')
+                ->references('id')
+                ->on('agences');
         });
     }
 

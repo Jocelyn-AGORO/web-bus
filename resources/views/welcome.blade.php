@@ -5,7 +5,7 @@
     <div class="hero">
         <div class="hero-content">
             <h1>WEB BUS</h1>
-            <p>Faites vos reservation de bus en ligne</p>
+            <p>Faites vos reservations de bus en ligne</p>
             <a href="{{ route('reservations') }}" class="button" id="show-modal-bis">Démarrer</a>
         </div>
     </div>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="membership-perks">
                     <p>Envoyez des colis à vos proches</p>
-                    <p>À partir de 500 FCFA</p>
+                    <p>À partir de 1000 FCFA</p>
                 </div>
                 <a href="#" class="button">Envoyer</a>
             </div>
@@ -99,7 +99,7 @@
                     <p>Reservez vos ticket de voyages</p>
                     <p>À partir de 2000 FCFA</p>
                 </div>
-                <a href="#" class="button">Reserver</a>
+                <a href="{{route('reservations')}}" class="button">Reserver</a>
             </div>
         </div>
     </div>
@@ -144,5 +144,5 @@
         </div>
     </div>
 
-    <script src="{{asset('js/script.js')}}"></script>
+{{-- <script src="{{asset('js/script.js')}}"></script> --}}
     @endsection

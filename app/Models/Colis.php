@@ -9,11 +9,11 @@ class Colis extends Model
 {
     use HasFactory;
 
-    protected $table='Colis';
+    protected $table='colis';
 
     protected $primaryKey ='id';
 
-    protected $timestamps = true;
+    protected $timestamp = true;
 
     protected $formatter='Y-m-d H:i:s';
 

@@ -9,16 +9,15 @@ class Client extends Model
 {
     use HasFactory;
 
-    protected $table='Client';
+    protected $table='clients';
 
     protected $primaryKey ='id';
 
-    protected $timestamps = true;
+    protected $timestamp = true;
 
     protected $formatter='Y-m-d H:i:s';
 
     protected $fillable = [
-        'id',
         'nom',
         'prenom'
     ];

@@ -10,11 +10,11 @@ class Voyage extends Model
 {
     use HasFactory;
 
-    protected $table='Voyage';
+    protected $table='voyages';
 
     protected $primaryKey ='id';
 
-    protected $timestamps = true;
+    protected $timestamp = true;
 
     protected $formatter='Y-m-d H:i:s';
 
@@ -25,7 +25,8 @@ class Voyage extends Model
         'conducteur_id',
         'bus_id',
         'passager_id',
-        'ville_id'
+        'ville_id',
+        'admin_id'
     ];
 
     public function VoyageBus()
@@ -51,6 +52,11 @@ class Voyage extends Model
     public function VoyageTickets()
     {
         $this->hasMany(Tickets::class);
+    }
+
+    public function VoyageAdministrateur()
+    {
+        $this->belongsTo(Administrateur::class);
     }
 
 }

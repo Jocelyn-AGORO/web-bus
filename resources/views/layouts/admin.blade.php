@@ -25,14 +25,14 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-            <div class="navbar-menu">
+            {{--<div class="navbar-menu">
                 <a href="/" class="navbar-link {{request()->is('/')?'active-page':''}}"><i class="fas fa-home"></i>&nbsp;Accueil</a>
                 <a href="{{ route('services') }}" class="navbar-link selected {{request()->is('services')?'active-page':''}}" id="show-modal"><i class="fas fa-star"></i>&nbsp;Services</a>
                 <a href="{{ route('lines') }}" class="navbar-link {{request()->is('lignes')?'active-page':''}}"><i class="fas fa-road"></i>&nbsp;Lignes</a>
                 <a href="{{ route('contacts') }}" class="navbar-link {{request()->is('contacts')?'active-page':''}}"><i class="fas fa-envelope"></i>&nbsp;Contacts</a>
                 <a href="{{ route('about') }}" class="navbar-link {{request()->is('apropos')?'active-page':''}}"><i class="fas fa-users"></i>&nbsp;À propos</a>
                 <a href="{{ route('inscription') }}" class="navbar-link nav-signup {{request()->is('inscription')?'active-page':''}}"><i class="fas fa-user-lock"></i>&nbsp;S'inscrire</a>
-            </div>
+            </div>--}}
         </nav>
     </div>
     {{-- Sections on other pages --}}
@@ -61,9 +61,9 @@
             </div>
             <div class="footer-links">
                 <h2 class="footer-title">Services</h2>
-                <a href="{{ route('reservations') }}" class="footer-link">Reservation</a>
+                <a href="{{ route('reservations') }}" class="footer-link">Reservations</a>
                 <a href="{{ route('expeditions') }}" class="footer-link">Colis</a>
-                <a href=""{{ route('lines') }} class="footer-link">lignes</a>
+                <a href=""{{ route('lines') }} class="footer-link">Lignes</a>
             </div>
         </div>
     </div>

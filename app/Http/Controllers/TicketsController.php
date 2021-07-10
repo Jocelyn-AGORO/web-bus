@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use PDF;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\PDF;
+use Mpdf\Mpdf;
 
 
 class TicketsController extends Controller
@@ -34,9 +35,9 @@ class TicketsController extends Controller
 
     public function generateTicket()
     {
-        $data = '';
+        $data = 'Hello Ticket!';
         $page_ticket='';
-        $pdf = PDF::loadview('services.tickets');
+        $pdf = PDF::loadview('services.tickets',$data);
         return $pdf->download('ticket.pdf');
     }
 

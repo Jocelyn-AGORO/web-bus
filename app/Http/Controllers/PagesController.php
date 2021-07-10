@@ -26,6 +26,12 @@ class PagesController extends Controller
         return view("contacts");
     }
 
+    public function page_connexion()
+    {
+        $message = null;
+        return view('connexion',['message' => $message]);
+    }
+
     public function administrer()
     {
         return view('admin.index');

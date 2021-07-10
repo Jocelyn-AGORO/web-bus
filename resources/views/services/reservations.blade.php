@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div style="margin-top: 10rem">
+<div style="margin-top: 10rem" >
     <h1 class="centerise">Reservations</h1>
-    <div class="container mt-5">
+    <div class="container mt-5 w-75">
     <form action="{{ route('places-disponibles') }}" method="get">
         @csrf
         @method("GET")
@@ -52,7 +52,7 @@
     </form>
     </div>
      <div class="mt-5 table table-striped">
-        <div class="container">
+        <div class="container w-75">
             <div class="container my-5 p-2">
                 <div>
                         {{-- @foreach ( $voyages as $voyage )
@@ -61,14 +61,19 @@
                             <h3 class="list-group text-right">
                              <div class="list-group-item">Date : {{ $voyage->date }}</div>
                              <div class="py-3">
-                                 <a href="{{ route('reserver',['id' => 1]) }}" class="button">Reserver</a>
+                                 <form action="{{ route('success',['id' => $voyage->id ]) }}" method="post">
+                                     @csrf
+                                     @method("POST")
+                                     <input id="place{{ $voyage->id }}" type="number" name="place{{ $voyage->id }}" class="form-control shadow w-25 ml-auto my-3" placeholder="nombre de places ..." value="1">
+                                     <a href="{{ route('reserver',['id' => $voyage->id ]) }}" class="button"><button class="button">Reserver</button></a>
+                                 </form>
                             </div>
                             </h3>
                             <h2>Places Disponibles : </h2>
                             <h2>Départ : {{ $voyage->parcours }} </h2>
                             <h3>Arrivée : {{ $voyage->parcours }}</h3>
                             <h4>Heure de départ :{{ $voyage->heure_depart }}</h4>
-                            <h5>Durée moyenne du voyage : 1h30</h5>
+                            <h5>Durée moyenne du voyage : {{ $voyage->duree }}</h5>
                             </li>
                         </ol>
                          @endforeach
@@ -82,7 +87,7 @@
                             <h3 class="list-group text-right">
                              <div class="list-group-item">Date : 30-06-2021</div>
                              <div class="py-3">
-                                 <a href="{{ route('reserver',['id' => 1]) }}" class="button">Reserver</a>
+                                 <a href="{{ route('reserver',['id' => 2]) }}" class="button">Reserver</a>
                             </div>
                             </h3>
                             <h2>Places Disponibles : </h2>
@@ -97,7 +102,12 @@
                             <h3 class="list-group text-right">
                              <div class="list-group-item">Date : 28-06-2021</div>
                              <div class="py-3">
-                                 <a href="{{ route('reserver',['id' => 2]) }}" class="button">Reserver</a>
+                                 <form action="{{ route('success',['id' => 5 ]) }}" method="post">
+                                     @csrf
+                                     @method("POST")
+                                     <input id="place" type="number" name="place" class="form-control shadow w-25 ml-auto my-3" placeholder="nombre de places ..." value="1" max="5">
+                                     <a href="{{ route('reserver',['id' => 5]) }}" class="button"><button class="button w-25">Reserver</button></a>
+                                 </form>
                             </div>
                             </h3>
                             <h2>Places Disponibles : </h2>
@@ -109,7 +119,6 @@
                             </ol>
                 </section>
             </div>
-            
     </div>
 </div>
 

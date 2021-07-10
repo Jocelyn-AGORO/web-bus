@@ -9,15 +9,19 @@ class Passager extends Model
 {
     use HasFactory;
 
-    protected $table='Passager';
+    protected $table='passagers';
 
     protected $primaryKey ='id';
 
-    protected $timestamps = true;
+    protected $timestamp = true;
 
     protected $formatter='Y-m-d H:i:s';
 
     protected $fillable = [
+        'nom',
+        'prenom',
+        'age',
+        'profession',
         'adresse',
         'mail',
         'telephone',

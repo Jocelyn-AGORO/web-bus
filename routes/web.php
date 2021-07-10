@@ -13,6 +13,7 @@ use App\Http\Controllers\PassagerController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\TicketsController;
 use App\Http\Controllers\ColisController;
+use App\Http\Controllers\AdministrateurController;
 
 
 /*
@@ -28,7 +29,7 @@ use App\Http\Controllers\ColisController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('acceuil');
 
 // Auth::routes();
 
@@ -42,7 +43,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Pages du site Web
 
-Route::get('/admin',[PagesController::class,'administrer'])->name('panel-admin');
+Route::get('admin.panel',[PagesController::class,'administrer'])->name('panel-admin');
+
+Route::post('/admin/login',[AdministrateurController::class,'connexion_admin'])->name('connexion_admin');
+
+Route::get('/admin/login',[AdministrateurController::class,'auth_admin'])->name('auth_admin');
 
 Route::get('/services',[PagesController::class,'services'])->name('services');
 
@@ -52,10 +57,14 @@ Route::get('/contacts',[PagesController::class,'contacts'])->name('contacts');
 
 Route::get('/about',[PagesController::class,'about'])->name('about');
 
+Route::post('/connexion',[ClientController::class,'index'])->name('connexion');
+
+Route::get('/connexion',[PagesController::class,'page_connexion'])->name('page_connexion');
+
 //Gestion des Colis
 Route::post('admin/colis',[ColisController::class,'store'])->name('ajoutercolis');
 Route::put('admin/colis/editer/{id}',[ColisController::class,'editer'])->name('editercolis');
-Route::delete('admin/colis/supprimer/{id}',[Colisontroller::class,'supprimer'])->name('supprimercolis');
+Route::delete('admin/colis/supprimer/{id}',[ColisController::class,'supprimer'])->name('supprimercolis');
 Route::get('admin/colis',[ColisController::class,'ajouter'])->name('colis');
 
 //Gestion des tickets
@@ -129,6 +138,9 @@ Route::get('/services/reservations/voyages',[VoyageController::class,'index'])->
 
 //reservez une place
 Route::post('/services/reservations/reserver/{id}',[VoyageController::class,'reserver'])->name('reserver');
+Route::get('/services/reservations/reserver/{id}',[VoyageController::class,'reserver'])->name('success');
+//nombre de place
+//Route::post('/services/reservations',[VoyageController::class,'nb_place'])->name('nb_place');
 
 Route::get('/services/expeditions',[VoyageController::class,'expeditions'])->name('expeditions');
 

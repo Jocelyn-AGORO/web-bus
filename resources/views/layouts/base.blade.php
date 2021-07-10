@@ -31,7 +31,20 @@
                 <a href="{{ route('lines') }}" class="navbar-link {{request()->is('lignes')?'active-page':''}}"><i class="fas fa-road"></i>&nbsp;Lignes</a>
                 <a href="{{ route('contacts') }}" class="navbar-link {{request()->is('contacts')?'active-page':''}}"><i class="fas fa-envelope"></i>&nbsp;Contacts</a>
                 <a href="{{ route('about') }}" class="navbar-link {{request()->is('apropos')?'active-page':''}}"><i class="fas fa-users"></i>&nbsp;À propos</a>
-                <a href="{{ route('inscription') }}" class="navbar-link nav-signup {{request()->is('inscription')?'active-page':''}}"><i class="fas fa-user-lock"></i>&nbsp;S'inscrire</a>
+                @if( request()->is('/acceuil') )
+                    <a href="{{ route('inscription') }}" class="navbar-link nav-signup {{request()->is('inscription')?'active-page':''}}"><i class="fas fa-user-lock"></i>&nbsp;S'inscrire</a>
+                    <a href="{{ route('connexion') }}" class="navbar-link nav-signup {{request()->is('connexion')?'active-page':''}}"><i class="fas fa-sign-in-alt"></i> Se connecter</a>
+                @endif
+                {{--<div class="dropdown">
+                    <button class="button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Inscription ou Connexion
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a href="{{ route('inscription') }}" class="navbar-link nav-signup {{request()->is('inscription')?'active-page':''}}"><i class="fas fa-user-lock"></i>&nbsp;S'inscrire</a></li>
+                        <li><a href="{{ route('connexion') }}" class="navbar-link nav-signup {{request()->is('connexion')?'active-page':''}}"><i class="fas fa-sign-in"></i></a></li>
+                    </ul>
+                </div> --}}
+
             </div>
         </nav>
     </div>
@@ -61,12 +74,12 @@
             </div>
             <div class="footer-links">
                 <h2 class="footer-title">Services</h2>
-                <a href="{{ route('reservations') }}" class="footer-link">Reservation</a>
+                <a href="{{ route('reservations') }}" class="footer-link">Reservations</a>
                 <a href="{{ route('expeditions') }}" class="footer-link">Colis</a>
-                <a href=""{{ route('lines') }} class="footer-link">lignes</a>
+                <a href=""{{ route('lines') }} class="footer-link">Lignes</a>
             </div>
         </div>
     </div>
-    
+    <script src="{{asset('js/script.js')}}"></script>
 </body>
 </html>

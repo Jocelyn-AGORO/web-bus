@@ -9,17 +9,22 @@ class Expediteur extends Model
 {
     use HasFactory;
 
-    protected $table='Expediteur';
+    protected $table='expediteurs';
 
     protected $primaryKey ='id';
 
-    protected $timestamps = true;
+    protected $timestamp = true;
 
     protected $formatter='Y-m-d H:i:s';
 
     protected $fillable = [
-        'telephone',
+        'nom',
+        'prenom',
+        'age',
+        'profession',
         'adresse',
+        'mail',
+        'telephone',
     ];
 
     public function ExpediteurColis()
