@@ -41,4 +41,41 @@ class PagesController extends Controller
     {
         return view("about");
     }
+
+    public function espace_expediteur()
+    {
+
+        return view('expediteur.espace.expediteur');
+    }
+
+    public function historique_expediteur()
+    {
+
+        return view('expediteur.historique');
+    }
+
+    public function espace_passager()
+    {
+
+        return view('passager.espace.passager');
+    }
+
+    public function suggestions()
+    {
+
+        return view('suggestions');
+    }
+
+    public function historique_passager()
+    {
+
+        return view('passager.historique');
+    }
+
+    public function photos()
+    {
+
+        return view('passager.galerie.photos');
+    }
+
 }

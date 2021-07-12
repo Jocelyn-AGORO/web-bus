@@ -6,7 +6,7 @@
         <div class="hero-content">
             <h1>WEB BUS</h1>
             <p>Faites vos reservations de bus en ligne</p>
-            <a href="{{ route('reservations') }}" class="button" id="show-modal-bis">Démarrer</a>
+            <a href="{{ route('page_connexion') }}" class="button" id="show-modal-bis">Démarrer</a>
         </div>
     </div>
 
@@ -143,6 +143,4 @@
             </form>
         </div>
     </div>
-
-{{-- <script src="{{asset('js/script.js')}}"></script> --}}
-    @endsection
+@endsection

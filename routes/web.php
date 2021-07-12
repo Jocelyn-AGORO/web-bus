@@ -57,9 +57,27 @@ Route::get('/contacts',[PagesController::class,'contacts'])->name('contacts');
 
 Route::get('/about',[PagesController::class,'about'])->name('about');
 
-Route::post('/connexion',[ClientController::class,'index'])->name('connexion');
+Route::post('/connexion',[ClientController::class,'connexion'])->name('connexion');
 
 Route::get('/connexion',[PagesController::class,'page_connexion'])->name('page_connexion');
+
+Route::get('/deconnexion',[ClientController::class,'deconnexion'])->name('deconnexion');
+
+//espace expediteur
+
+Route::get('espace.expediteur',[PagesController::class,'espace_expediteur'])->name('espace_expediteur');
+
+Route::get('espace.expediteur/historique',[PagesController::class,'historique_expediteur'])->name('historique_expediteur');
+
+//espace passager
+
+Route::get('espace.passager',[PagesController::class,'espace_passager'])->name('espace_passager');
+
+Route::get('espace.passager/suggestions',[PagesController::class,'suggestions'])->name('suggestions');
+
+Route::get('espace.passager/historique',[PagesController::class,'historique_passager'])->name('historique_passager');
+
+Route::get('espace.passager/photos',[PagesController::class,'photos'])->name('galerie_photo');
 
 //Gestion des Colis
 Route::post('admin/colis',[ColisController::class,'store'])->name('ajoutercolis');

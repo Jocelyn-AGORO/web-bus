@@ -26,25 +26,32 @@
                 <span class="bar"></span>
             </div>
             <div class="navbar-menu">
-                <a href="/" class="navbar-link {{request()->is('/')?'active-page':''}}"><i class="fas fa-home"></i>&nbsp;Accueil</a>
+                <a href="{{ route('acceuil') }}" class="navbar-link {{request()->is('/')?'active-page':''}}"><i class="fas fa-home"></i>&nbsp;Accueil</a>
                 <a href="{{ route('services') }}" class="navbar-link selected {{request()->is('services')?'active-page':''}}" id="show-modal"><i class="fas fa-star"></i>&nbsp;Services</a>
                 <a href="{{ route('lines') }}" class="navbar-link {{request()->is('lignes')?'active-page':''}}"><i class="fas fa-road"></i>&nbsp;Lignes</a>
                 <a href="{{ route('contacts') }}" class="navbar-link {{request()->is('contacts')?'active-page':''}}"><i class="fas fa-envelope"></i>&nbsp;Contacts</a>
                 <a href="{{ route('about') }}" class="navbar-link {{request()->is('apropos')?'active-page':''}}"><i class="fas fa-users"></i>&nbsp;À propos</a>
-                @if( request()->is('/acceuil') )
-                    <a href="{{ route('inscription') }}" class="navbar-link nav-signup {{request()->is('inscription')?'active-page':''}}"><i class="fas fa-user-lock"></i>&nbsp;S'inscrire</a>
-                    <a href="{{ route('connexion') }}" class="navbar-link nav-signup {{request()->is('connexion')?'active-page':''}}"><i class="fas fa-sign-in-alt"></i> Se connecter</a>
+                @if( request()->is('/') )
+                    @if(session('id'))
+                        <a href="{{ route('deconnexion') }}" class="navbar-link nav-signup {{request()->is('connexion')?'active-page':''}}"><i class="fas fa-arrow-left"></i> Déconnexion</a>
+                    @else
+                        <div class="navbar-link dropdown">
+                            <button class="button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Inscription et Connexion
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a href="{{ route('inscription') }}" class="dropdown-item"><i class="fas fa-user-lock"></i>&nbsp;S'inscrire</a></li>
+                                <li><a href="{{ route('connexion') }}" class="dropdown-item"><i class="fas fa-sign-in-alt"></i> Se connecter</a></li>
+                            </ul>
+                        </div>
+                    {{--<a href="{{ route('inscription') }}" class="navbar-link nav-signup {{request()->is('inscription')?'active-page':''}}"><i class="fas fa-user-lock"></i>&nbsp;S'inscrire</a>
+                    <a href="{{ route('connexion') }}" class="navbar-link nav-signup {{request()->is('connexion')?'active-page':''}}"><i class="fas fa-sign-in-alt"></i> Se connecter</a>--}}
+                    @endif
+                @else
+                    @if(session('id'))
+                        <a href="{{ route('page_connexion') }}" class="navbar-link nav-signup {{request()->is('connexion')?'active-page':''}}"><i class="fas fa-arrow-left"></i> Déconnexion</a>
+                    @endif
                 @endif
-                {{--<div class="dropdown">
-                    <button class="button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Inscription ou Connexion
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a href="{{ route('inscription') }}" class="navbar-link nav-signup {{request()->is('inscription')?'active-page':''}}"><i class="fas fa-user-lock"></i>&nbsp;S'inscrire</a></li>
-                        <li><a href="{{ route('connexion') }}" class="navbar-link nav-signup {{request()->is('connexion')?'active-page':''}}"><i class="fas fa-sign-in"></i></a></li>
-                    </ul>
-                </div> --}}
-
             </div>
         </nav>
     </div>
@@ -76,10 +83,11 @@
                 <h2 class="footer-title">Services</h2>
                 <a href="{{ route('reservations') }}" class="footer-link">Reservations</a>
                 <a href="{{ route('expeditions') }}" class="footer-link">Colis</a>
-                <a href=""{{ route('lines') }} class="footer-link">Lignes</a>
+                <a href="{{ route('lines') }}" class="footer-link">Lignes</a>
             </div>
         </div>
     </div>
     <script src="{{asset('js/script.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>

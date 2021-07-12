@@ -17,7 +17,7 @@
                                 <strong class="me-auto">Notification d'erreur</strong>
                                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                             </div>
-                            <div class="toast-body">
+                            <div class="toast-body text-primary font-weight-bold">
                                 {{ $message }}
                             </div>
                         </div>
@@ -54,8 +54,8 @@
                                     <div class="row mx-1"><input id="age" name="age" type="number" value="18" max="99" class="form-control shadow"></div>
                                 </div>
                                 <div class="col-6 col-sm my-3">
-                                    <div class="row mx-1"><label for="tel">Numéro de Téléphone (précédé de +228 )</label></div>
-                                    <div class="row mx-1"><input id="tel" name="tel" type="tel" class="form-control shadow" maxlength="12"></div>
+                                    <div class="row mx-1"><label for="tel">Numéro de Téléphone </label></div>
+                                    <div class="row mx-1"><input id="tel" name="tel" type="tel" class="form-control shadow" maxlength="12" placeholder="( précédé de +228 )"></div>
                                 </div>
                             </div>
                             <div class="row col-sm mt-3">

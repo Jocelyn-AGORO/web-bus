@@ -25,7 +25,7 @@ class Passager extends Model
         'adresse',
         'mail',
         'telephone',
-        'voyage_id'
+        'connecte'
     ];
 
     public function PassagerVoyage()

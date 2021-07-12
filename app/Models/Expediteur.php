@@ -25,6 +25,7 @@ class Expediteur extends Model
         'adresse',
         'mail',
         'telephone',
+        'connecte'
     ];
 
     public function ExpediteurColis()

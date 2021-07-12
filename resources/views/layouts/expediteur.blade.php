@@ -26,10 +26,9 @@
             <span class="bar"></span>
         </div>
         <div class="navbar-menu">
-            <a href="/" class="navbar-link {{request()->is('/')?'active-page':''}}"><i class="fas fa-home"></i>&nbsp;Accueil</a>
-            <a href="{{ route('lines') }}" class="navbar-link {{request()->is('lignes')?'active-page':''}}"><i class="fas fa-road"></i>&nbsp;Lignes</a>
-            <a href="{{ route('contacts') }}" class="navbar-link {{request()->is('contacts')?'active-page':''}}"><i class="fas fa-envelope"></i>&nbsp;Contacts</a>
-            <a href="{{ route('about') }}" class="navbar-link {{request()->is('apropos')?'active-page':''}}"><i class="fas fa-users"></i>&nbsp;À propos</a>
+            <a href="{{ route('acceuil') }}" class="navbar-link {{request()->is('/')?'active-page':''}}"><i class="fas fa-home"></i>&nbsp;Accueil</a>
+            <a href="{{ route('services') }}" class="navbar-link selected {{request()->is('services')?'active-page':''}}" id="show-modal"> Reservations</a>
+            <a href="{{ route('suggestions') }}" class="navbar-link selected {{request()->is('suggestions')?'active-page':''}}" id="show-modal"> Suggestions</a>
         </div>
     </nav>
 </div>
@@ -46,7 +45,6 @@
         <div class="footer-links">
             <h2 class="footer-title">Contactez-nous</h2>
             <a href="{{ route('contacts') }}" class="footer-link">Contact</a>
-            <p>Services</p>
             <a href="{{ route('about') }}" class="footer-link">À propos</a>
         </div>
     </div>
@@ -59,9 +57,8 @@
         </div>
         <div class="footer-links">
             <h2 class="footer-title">Services</h2>
-            <p>Reservations</p>
-            <p>Colis</p>
-            <p>Lignes</p>
+            <a href="{{ route('expeditions') }}" class="footer-link">Colis</a>
+            <a href="{{ route('lines') }}" class="footer-link">Lignes</a>
         </div>
     </div>
 </div>

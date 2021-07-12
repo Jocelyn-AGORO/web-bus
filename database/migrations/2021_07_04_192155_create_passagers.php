@@ -23,6 +23,7 @@ class CreatePassagers extends Migration
             $table->string('email')->nullable(false)->unique();
             $table->string('mot_de_passe');
             $table->string('telephone',13);
+            $table->boolean('connecte');
             $table->timestamps();
         });
     }

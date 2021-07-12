@@ -63,10 +63,11 @@
                 <h2 class="footer-title">Services</h2>
                 <a href="{{ route('reservations') }}" class="footer-link">Reservations</a>
                 <a href="{{ route('expeditions') }}" class="footer-link">Colis</a>
-                <a href=""{{ route('lines') }} class="footer-link">Lignes</a>
+                <a href="{{ route('lines') }}" class="footer-link">Lignes</a>
             </div>
         </div>
     </div>
     <script src="{{asset('js/script.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>
